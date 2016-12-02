@@ -9,9 +9,12 @@ const client = new Twitter(require('./config.js'));
 
 /**
  * Fetches tweets for the specified screen name.
- * @param {string} screenName Name of user for which tweets will be fetched.
- * @param {number} count Number of tweets that should be fetched.
- * @returns {object} Promise object that resolves an array of tweets.
+ * @param {string} screenName
+ *  Name of user for which tweets will be fetched.
+ * @param {number} count
+ *  Number of tweets that should be fetched.
+ * @returns {object}
+ *  Promise object that resolves an array of tweets.
  */
 const fetchTweets = (screenName, count = 200) => (
   new Promise((resolve, reject) => {
@@ -29,8 +32,10 @@ const fetchTweets = (screenName, count = 200) => (
 
 /**
  * Fetches past 200 tweets from specified username and uses Markov to generate a new sentance.
- * @param {string} screenName Name of user for which a tweet will be generated.
- * @return {object} Promise object that resolves a markov-generated sentance.
+ * @param {string} screenName
+ *  Name of user for which a tweet will be generated.
+ * @return {object}
+ *  Promise object that resolves a markov-generated sentance.
  */
 const generateTweet = (screenName) => (
   new Promise((resolve, reject) => {
