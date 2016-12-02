@@ -7,3 +7,4 @@ rules:
   no-console: [0]
   new-cap: [0]
   global-require: [0]
+  newline-per-chained-call: [0]
