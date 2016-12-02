@@ -73,5 +73,4 @@ const tweetToTrump = () => {
   }).catch(console.log);
 };
 
-tweetToTrump();
 exports.handler = tweetToTrump;
