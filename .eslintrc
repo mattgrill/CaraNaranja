@@ -1,0 +1,10 @@
+parser: babel-eslint
+extends: airbnb-base
+rules:
+  no-param-reassign: [0]
+  no-underscore-dangle: [0, { allow: [] }]
+  brace-style: [2, "stroustrup"]
+  no-console: [0]
+  new-cap: [0]
+  global-require: [0]
+  newline-per-chained-call: [0]
