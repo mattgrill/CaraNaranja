@@ -43,7 +43,7 @@ const generateTweet = (screenName) => (
         minScore: 10,
       });
 
-      // Build corpus, generate sent
+      // Build corpus, generate sentance.
       markov.buildCorpus()
       .then(() => markov.generateSentence())
       .then(result => {
