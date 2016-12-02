@@ -11,12 +11,10 @@ const client = new Twitter(require('./config.js'));
  * Fetches tweets for the specified screen name.
  * @param {string} screenName
  *  Name of user for which tweets will be fetched.
- * @param {number} count
- *  Number of tweets that should be fetched.
  * @returns {object}
  *  Promise object that resolves an array of tweets.
  */
-const fetchTweets = (screenName, count = 200) => (
+const fetchTweets = (screenName, count) => (
   new Promise((resolve, reject) => {
     client.get('statuses/user_timeline', {
       screen_name: screenName,
@@ -40,7 +38,7 @@ const fetchTweets = (screenName, count = 200) => (
 const generateTweet = (screenName) => (
   new Promise((resolve, reject) => {
     // Fetch last 200 tweets from screenName.
-    fetchTweets(screenName).then((tweets) => {
+    fetchTweets(screenName, 200).then((tweets) => {
       // Create a markov chain generator.
       const markov = new Markov(tweets.map(tweet => tweet.text), {
         stateSize: 1,
@@ -75,4 +73,5 @@ const tweetToTrump = () => {
   }).catch(console.log);
 };
 
+tweetToTrump();
 exports.handler = tweetToTrump;
